@@ -1,4 +1,4 @@
-package aniefer.crossword;
+package aniefer.recursion.crossword;
 
 import java.util.ArrayList;
 import java.util.Arrays;

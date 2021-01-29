@@ -1,4 +1,4 @@
-package aniefer.crossword;
+package aniefer.recursion.crossword;
 
 import static org.junit.Assert.assertArrayEquals;
 
