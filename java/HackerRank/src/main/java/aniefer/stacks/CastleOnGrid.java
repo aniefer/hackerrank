@@ -1,15 +1,17 @@
-package aniefer.stacks.castle;
+package aniefer.stacks;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import junit.framework.TestCase;
+
 /**
  * https://www.hackerrank.com/challenges/castle-on-the-grid/problem
  * Solve the castle on grid using a breadth first search
  */
-public class CastleOnGrid {
+public class CastleOnGrid extends TestCase {
 	private static final Position SENTINEL = new Position(-1, -1);
 
 	private static class Position {
@@ -30,6 +32,10 @@ public class CastleOnGrid {
 	private String[] grid;
 	private boolean[][] visited;
 
+	public CastleOnGrid() {
+		// for unit test
+	}
+	
 	public CastleOnGrid(String[] grid) {
 		if (grid == null || grid.length == 0) {
 			throw new IllegalArgumentException();
@@ -91,5 +97,21 @@ public class CastleOnGrid {
 				result.add(new Position(x, y));
 			}
 		}
+	}
+	
+	
+	
+	
+	
+	
+	public void testCase() {
+		String[] grid = new String[] { ".X.", ".X.", "..." };
+		assertEquals(3, CastleOnGrid.minimumMoves(grid, 0, 0, 0, 2));
+
+		grid = new String[] { "...", ".X.", ".X." };
+		assertEquals(3, CastleOnGrid.minimumMoves(grid, 2, 0, 2, 2));
+
+		grid = new String[] { "...", ".X.", ".X." };
+		assertEquals(2, CastleOnGrid.minimumMoves(grid, 2, 0, 0, 2));
 	}
 }
